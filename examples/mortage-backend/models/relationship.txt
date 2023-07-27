@@ -1,0 +1,15 @@
+1. Lender-Borrower Relationshop
+
+A lender can have multiple borrowers, but each borrower can have only one lender.
+This is one-to-many relationship.
+
+2. Borrower-Loan relationship
+A borrower can have multiple loans, and each loan belongs to only one borrower.
+This is one-to-many relationship.
+
+3. Loan-Collateral relationship
+each loan can be associated with one or more collateral items,
+and each collateral item can be linked to multiple loans.
+This is many-to-many relationship.
+
+collateral ID/ loanID

@@ -8,7 +8,7 @@ import {
 import MainLayout from './layouts/MainLayout';
 
 function App() {
-  const [mode, setMode] = React.useState<PaletteMode>('dark');
+  const [mode, setMode] = React.useState<PaletteMode>('light');
   const darkTheme = createTheme({
     palette: {
       mode: mode,
