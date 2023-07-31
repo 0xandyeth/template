@@ -21,14 +21,16 @@ import {
   AccordionDetails,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React,{useEffect, useRef,forwardRef} from 'react';
 
-const Sidebar = () => {
+const Sidebar = forwardRef(function Sidebar(props, ref){
+
   return (
     <Box
       sx={{
         mt: '60px',
       }}
+      ref={ref}
     >
       <Box>
         <Accordion>
@@ -126,6 +128,6 @@ const Sidebar = () => {
       </Box>
     </Box>
   );
-};
+});
 
 export default Sidebar;

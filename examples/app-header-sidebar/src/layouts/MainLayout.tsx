@@ -24,6 +24,23 @@ const MainLayout = (props: Props) => {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
+  const ref = React.useRef<HTMLDivElement>(null);
+  const ref1 = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    function handleClickOutside(event: any) {
+      if (ref.current && ref1.current && !event.target.contains(ref1.current)) {
+      } else {
+        console.log('456');
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [ref]);
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -39,8 +56,9 @@ const MainLayout = (props: Props) => {
           display: { xs: 'block', sm: 'none' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
         }}
+        ref={ref}
       >
-        <Sidebar />
+        <Sidebar ref={ref1} />
       </Drawer>
       <Drawer
         variant='permanent'
@@ -58,9 +76,9 @@ const MainLayout = (props: Props) => {
         }}
         open
       >
-        <Sidebar />
+        <Sidebar ref={ref1} />
       </Drawer>
-      <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
+      <Box component='main' sx={{ flexGrow: 1, p: 3 , overflowX:'hidden'}}>
         <Feed />
       </Box>
     </Box>

@@ -6,9 +6,10 @@ import {
   PaletteMode,
 } from '@mui/material';
 import MainLayout from './layouts/MainLayout';
+// import './styles.css';
 
 function App() {
-  const [mode, setMode] = React.useState<PaletteMode>('light');
+  const [mode, setMode] = React.useState<PaletteMode>('dark');
   const darkTheme = createTheme({
     palette: {
       mode: mode,
