@@ -40,18 +40,20 @@ const Feed = () => {
                  borderRadius: 2,
                  justifyContent:'center',
                  alignItems:'center',
-                 display:'block',
-                 textAlign:'center',
-                 alignContent:'center',
+                 display:'flex',
 
               }}>
-                <Typography>Hashing</Typography>
+                <Box>
+                <h1 className='text-3xl font-bold underline'>Hello world</h1>
+                {/* <Typography variant='h2' fontWeight='bold'>Defi Tribe</Typography> */}
                 <Button
                  variant='contained'
                  sx={{
                     bgcolor:'#E42575'
                  }}
                 >Explore Collection</Button>
+                </Box>
+          
               </Box>
               <Box width={'60%'}>
                 <img
@@ -74,15 +76,23 @@ const Feed = () => {
                  borderRadius: 2,
                  justifyContent:'center',
                  alignItems:'center',
-                 display:'block'
+                 display:'flex'
               }}>
-                 <Typography>Hashing</Typography>
+                <Box>
+                <Typography variant="h2" fontWeight='bold'>The Heist</Typography>
+                <Typography sx={{
+                    width:'60%'
+                }}>Enjoy -0.25% maker and 0.25% taker fees!
+                    The Heist is a high-stakers,risk based game of crime,corruption... and bananas.
+                </Typography>
                 <Button
                  variant='contained'
                  sx={{
                     bgcolor:'#E42575'
                  }}
                 >Explore Collection</Button>
+                </Box>
+
               </Box>
               <Box width={'60%'}>
                 <img
