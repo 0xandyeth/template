@@ -30,8 +30,16 @@
 
 
 @layer components{
-  .btn-blue{
-    @apply px-7 bg-blue-500
+  .btn-gradient-h{
+    background: conic-gradient(rgba(88,175,16,1),rgba(29,128,58,1));
   }
+  .btn-gradient-m{
+    background: conic-gradient(rgba(136,83,252,1),rgba(110,52,226,1));
+
+  }
+
+ .image-item{
+   margin-left: 10px!important;
+ }
 
 }
