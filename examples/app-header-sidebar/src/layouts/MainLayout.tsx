@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Drawer from '@mui/material/Drawer';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
+import Challenge from '../components/Challenge';
 
 interface Props {
   /**
@@ -78,8 +79,9 @@ const MainLayout = (props: Props) => {
       >
         <Sidebar ref={ref1} />
       </Drawer>
-      <Box component='main' sx={{ flexGrow: 1, p: 3 , overflowX:'hidden'}}>
-        <Feed />
+      <Box component='main' sx={{ flexGrow: 1, p: 3 , overflowX:'hidden',background:'green'}}>
+        {/* <Feed /> */}
+        <Challenge/>
       </Box>
     </Box>
   );

@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   return (
     <div className='h-screen bg-[#1C1E22] overflow-y-auto'>
       <Head>
-        <title>My Victory</title>
+        <title>BC.Game:Crypto Casino Game</title>
       </Head>
       <Header />
       <Sidebar />

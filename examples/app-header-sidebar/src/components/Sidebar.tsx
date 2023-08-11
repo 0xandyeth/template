@@ -125,6 +125,29 @@ const Sidebar = forwardRef(function Sidebar(props, ref){
             </List>
           </AccordionDetails>
         </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMore />}
+            aria-controls='panel1a-content'
+            id='panel1a-header'
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <Shop />
+              </ListItemIcon>
+              <ListItemText primary='Creators'></ListItemText>
+            </ListItem>
+          </AccordionSummary>
+          <AccordionDetails>
+            <List>
+              <ListItem disablePadding>
+                <ListItemButton component='a' href='#challenge'>
+                  <ListItemText primary='Presale'></ListItemText>
+                </ListItemButton>
+              </ListItem>
+            </List>
+          </AccordionDetails>
+        </Accordion>
       </Box>
     </Box>
   );

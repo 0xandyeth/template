@@ -7,15 +7,17 @@ import {GiTicket} from 'react-icons/gi';
 import { HiMenu } from 'react-icons/hi';
 import { keys } from '../../utils/key-list';
 import useStorage from '../../hooks/useStorage';
-import { toggleSidebar } from '../../store/actions';
+import { toggleSidebar,spinModal } from '../../store/actions';
 const Sidebar = () => {
-  const open = useSelector((state: any) => state.isSidebarOpen);
+  const open = useSelector((state: any) => state.sidebar.isSidebarOpen);
   const dispatch = useDispatch();
   const { setValue } = useStorage();
   const handleClickMenuIcon = (open: boolean) => {
     dispatch(toggleSidebar());
   };
-  console.log('sidebar..', open);
+  const handleClickSpin=()=>{
+    dispatch(spinModal());
+  }
   return (
     <div className='absolute left-0 top-0 shadow-md z-[1002]'>
       <div
@@ -28,10 +30,12 @@ const Sidebar = () => {
             className='bg-dark-purple text-gray-300 text-3xl cursor-pointer'
             onClick={() => handleClickMenuIcon(!open)}
           />
-          <img
+         <a href='/'>
+         <img
             src='/images/logo.png'
             className={`w-[140px] h-[32px] ${!open && 'hidden'}`}
           />
+         </a>
         </div>
 
         <div
@@ -62,7 +66,7 @@ const Sidebar = () => {
           </div>
           <div className={`flex flex-row items-center justify-between pt-2`}>
             <div
-              className={`flex flex-row items-center  ${
+              className={`flex flex-row items-center cursor-pointer ${
                 open &&
                 'p-4 h-[42px] bg-gradient-26 from-[rgb(109,43,255,.480402)] from-1.86% via-[rgb(109,43,255,.04)] from-85.25%  to-[rgb(216,216,216,.05)] from-85.25%'
               }`}
@@ -77,11 +81,12 @@ const Sidebar = () => {
               </span>
             </div>
             <div
-              className={`flex-row flex space-x-3 items-center p-4 h-[42px] bg-gradient-19 from-[rgb(175,13,132,.511772)] from-(-6.45%) via-[rgb(175,13,132,.04)] from-78.77% to-[rgb(216,216,216,.05)] ${
+              className={`flex-row flex space-x-3 items-center p-4 h-[42px] bg-gradient-19 from-[rgb(175,13,132,.511772)] from-(-6.45%) via-[rgb(175,13,132,.04)] from-78.77% to-[rgb(216,216,216,.05)] cursor-pointer ${
                 !open && 'hidden'
               }`}
+              onClick={()=>handleClickSpin()}
             >
-              <div className='item-center flex relative'>
+              <div className='item-center flex relative '>
                 <img
                   src='https://bcgame.top/assets/pointer.fe72597d.png'
                   className='w-[18px] h-[32px] z-10  absolute -top-2 left-[6px]'
